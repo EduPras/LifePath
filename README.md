@@ -4,6 +4,7 @@ Aplicativo web para criação e armazenamento de chaves dicotômicas de insetos.
 
 ## Executar aplicação
 ### Backend
+Tendo em vista que já possui um banco local no noe4j Desktop, 
 ```sh
 cd backend  
 npm install  
