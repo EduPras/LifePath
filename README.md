@@ -4,7 +4,7 @@ Aplicativo web para criação e armazenamento de chaves dicotômicas de insetos.
 
 ## Executar aplicação
 ### Backend
-Tendo em vista que já possui um banco local no noe4j Desktop, 
+Tendo em vista que já possui um banco local no noe4j Desktop, a datação para teste inicial dos insetos se encontra em: https://www.ica.ufmg.br/wp-content/uploads/2017/06/Apostila_Entomologia_Basica.pdf
 ```sh
 cd backend  
 npm install  
