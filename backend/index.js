@@ -1,6 +1,12 @@
 const neo4j = require('neo4j-driver');
 
-const driver = neo4j.driver("bolt://localhost:7687", neo4j.auth.basic("neo4j", "teste"));
+// Váriaveis para autenticação com banco de dados
+const uri = "bolt://localhost:7687";
+const user = "neo4j";
+const password = "teste";
+
+// Conexão com banco de dados
+const driver = neo4j.driver(uri, neo4j.auth.basic(user, password));
 const session = driver.session();
 
 async function connect(){
