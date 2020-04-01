@@ -1,12 +1,12 @@
 const connection = require('../database/connection');
 
 // Criação de chaves e relações entre as mesmas
-module.exports = async function create_key(id, sentence,shorthcut, id_parent){
+module.exports = async function create_key(id, sentence,shortcut, id_parent){
     const result = await connection.session.writeTransaction(tx =>
         tx.run(
             `
             MATCH (parent:key) WHERE parent.id = "${id_parent}"
-            CREATE (a:key{shortcut:"${shorthcut}", id:"${id}"})
+            CREATE (a:key{shortcut:"${shortcut}", id:"${id}"})
             CREATE (a)<-[:especify{sentence:"${sentence}"}]-(parent)
 
             ` ,
