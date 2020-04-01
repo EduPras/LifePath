@@ -6,8 +6,8 @@ module.exports = async function create_key(id, sentence,shortcut, id_parent){
         tx.run(
             `
             MATCH (parent:key) WHERE parent.id = "${id_parent}"
-            CREATE (a:key{shortcut:"${shortcut}", id:"${id}"})
-            CREATE (a)<-[:especify{sentence:"${sentence}"}]-(parent)
+            MERGE (a:key{shortcut:"${shortcut}", id:"${id}"})
+            MERGE (a)<-[:especify{sentence:"${sentence}"}]-(parent)
 
             ` ,
             )        

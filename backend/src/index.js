@@ -9,7 +9,7 @@ async function quit (){
 
 async function run(){
     await connection.session.writeTransaction(tx => 
-        tx.run('CREATE(:key{shortcut:"Inicio", id:"0"})')
+        tx.run('MERGE(:key{shortcut:"Inicio", id:"0"})')
      );
     /*
     Necessário uma chave inicial com id="0" no banco de dados(por enquanto)

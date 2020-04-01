@@ -6,8 +6,8 @@ module.exports = async function create_family(name, sentence, id_parent){
         tx.run(
             `
             MATCH (parent:key) WHERE parent.id = "${id_parent}"
-            CREATE (a:family{name:"${name}"})
-            CREATE (a)<-[:especify{sentence:"${sentence}"}]-(parent)
+            MERGE (a:family{name:"${name}"})
+            MERGE (a)<-[:especify{sentence:"${sentence}"}]-(parent)
 
             ` ,
             )        
