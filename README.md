@@ -8,5 +8,6 @@ Tendo em vista que já possui um banco local no noe4j Desktop, a datação para 
 ```sh
 cd backend  
 npm install  
-node index.js 
+npm start
 ```
+Utilize o insomnia ou um aplicativo semelhante para fazer as requests e criar nós, vale lembrar de possuir pelo menos um nó da chave no banco de dados
