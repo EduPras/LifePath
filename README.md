@@ -10,4 +10,4 @@ cd backend
 npm install  
 npm start
 ```
-Utilize o insomnia ou um aplicativo semelhante para fazer as requests e criar nós, vale lembrar de possuir pelo menos um nó da chave no banco de dados
+Utilize o insomnia ou um aplicativo semelhante para fazer as requests e criar nós, vale lembrar de possuir pelo menos um nó da chave no banco de dados.
