@@ -11,15 +11,16 @@ module.exports ={
                 `
                 MATCH (parent:key) WHERE parent.shortcut = "${sc_parent}"
                 MERGE (a:key{shortcut:"${shortcut}"})
-                MERGE (a)<-[:especify{sentence:"${sentence}"}]-(parent)
+                MERGE (a)<-[x:especify{sentence:"${sentence}"}]-(parent)
 
-                RETURN a.shortcut
+                RETURN x.sentence
                 ` ,
                 )        
             );
         
-        console.log(result.records[0].get(0));
-        return response.json();
+        return response.json({
+            "sentence": result.records[0].get(0)
+        });
         
     },
 } 
