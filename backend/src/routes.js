@@ -1,9 +1,11 @@
 const express = require('express');
 
-// Conexão com web
-const app = express();
-app.use(express.json());
-app.get('/', (request, response)=>{
-    response.send('Working!!');
-});
-app.listen(3333);
+const keyController = require('./controllers/keyController');
+const familyController = require('./controllers/familyController');
+
+const routes = express.Router();
+
+routes.post('/key', keyController.create);
+routes.post('/family', familyController.create);
+
+module.exports = routes;

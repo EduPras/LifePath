@@ -1,18 +1,27 @@
 const connection = require('../database/connection');
 
 // Criação de famílias
-module.exports = async function create_family(name, sentence, id_parent){
-    const result = await connection.session.writeTransaction(tx =>
-        tx.run(
-            `
-            MATCH (parent:key) WHERE ID(parent) = ${id_parent}
-            MERGE (a:family{name:"${name}"})
-            MERGE (a)<-[:especify{sentence:"${sentence}"}]-(parent)
+module.exports = {
+    async create(request, response){
 
-            RETURN ID(a)
-            ` ,
-            )        
-        );    
+        const { name, sentence, sc_parent} = request.body;
 
-    console.log(`Family: ID = ${result.records[0].get(0).low}\n\tName = ${name}\nhas been created.\n\n`);
+        const result = await connection.session.writeTransaction(tx =>
+            tx.run(
+                `
+                MATCH (parent:key) WHERE parent.shortcut = "${sc_parent}"
+                MERGE (a:family{name:"${name}"})
+                MERGE (a)<-[:especify{sentence:"${sentence}"}]-(parent)
+    
+                RETURN ID(a.name)
+                ` ,
+                )        
+            );    
+
+        return response.json(result.records[0].get(0).low);
+
+    }
+
+
 }
+
