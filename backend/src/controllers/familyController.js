@@ -11,9 +11,9 @@ module.exports = {
                 `
                 MATCH (parent:key) WHERE parent.shortcut = "${sc_parent}"
                 MERGE (a:family{name:"${name}"})
-                MERGE (a)<-[:especify{sentence:"${sentence}"}]-(parent)
-    
-                RETURN ID(a.name)
+                MERGE (a)<-[x:especify{sentence:"${sentence}"}]-(parent)
+
+                RETURN x.sentence
                 ` ,
                 )        
             );    
