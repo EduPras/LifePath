@@ -5,10 +5,13 @@ module.exports ={
     async create(request, response){
         const queries = request.body;
 
+        const user =  request.headers.user;
+
         await connection.session.writeTransaction(async tx=>{
             await tx.run(
                 `
-                MATCH (parent:key) WHERE parent.shortcut = "${queries.key_parent}"
+                MERGE (parent:key_change{shortcut:"${queries.key_parent}", title:"${queries.title}", description:"${queries.description}"})
+                MERGE (parent)-[:create_by]->(:user{user_login:"${user}"})
                 MERGE (a:key{shortcut:"${queries.shortcut}"})
                 MERGE (a)<-[x:especify{sentence:"${queries.sentence}"}]-(parent)
                 `
