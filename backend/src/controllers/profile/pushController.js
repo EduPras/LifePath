@@ -1,4 +1,4 @@
-const connection = require('../database/connection');
+const connection = require('../../database/connection');
 
 // Adicionar uma chave para ser analisada
 module.exports ={
@@ -10,10 +10,11 @@ module.exports ={
         await connection.session.writeTransaction(async tx=>{
             await tx.run(
                 `
-                MERGE (parent:key_change{shortcut:"${queries.key_parent}", title:"${queries.title}", description:"${queries.description}"})
-                MERGE (parent)-[:create_by]->(:user{user_login:"${user}"})
+                MATCH (u:user{user_login:"${user}"})
+                MERGE (new:query{ title:"${queries.title}", description:"${queries.description}"})
+                MERGE (new)-[:create_by]->(u)
                 MERGE (a:key{shortcut:"${queries.shortcut}"})
-                MERGE (a)<-[x:especify{sentence:"${queries.sentence}"}]-(parent)
+                MERGE (a)<-[:query_init]-(new)
                 `
             )
 
