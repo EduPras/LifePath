@@ -5,7 +5,8 @@ const previewController = require('./controllers/query/previewController');
 const pathController = require('./controllers/query/pathController');
 const pushController = require('./controllers/profile/pushController');
 const myQueriesController = require('./controllers/profile/myQueriesController');
-const loginController = require('./controllers/home/loginController');
+const postController = require('./controllers/home/postController');
+
 
 
 
@@ -21,7 +22,7 @@ routes.post('/profile/push', pushController.create);
 routes.get('/profile/queries', myQueriesController.index );
 
 // home
-routes.post('/', loginController.create);
+routes.post('/', postController.create);
 
 
 module.exports = routes;
