@@ -1,5 +1,5 @@
 const connection = require('../../database/connection');
-const hash = require('./hash');
+const hash = require('../../services/hash');
 
 // Registro de novo usuário
 

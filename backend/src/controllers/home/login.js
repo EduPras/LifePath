@@ -1,11 +1,9 @@
 const connection = require('../../database/connection');
-const hash = require('./hash')
+const hash = require('../../services/hash')
 
 module.exports = async (request, response)=>{
     try {
         const { user, password } = request.body;
-    
-        const hashedPassword = hash.hashed(password);
     
         const result = await connection.session.writeTransaction(tx =>
             tx.run(
@@ -17,16 +15,18 @@ module.exports = async (request, response)=>{
             );   
     
     
-        const true_password = result.records[0].get(0); 
+        const true_password =  result.records[0].get(0); 
 
-        const compare = hash.compare_passwords(password, true_password);
+        console.log(true_password);
+        console.log(password);
+
+        const compare = await hash.compare_passwords(password, true_password);
+        console.log(compare)
     
         if(compare){
             return response.json("0")
         }
         else{
-            console.log(hashedPassword);
-            console.log(true_password);
             return response.json("1")
         }
     
