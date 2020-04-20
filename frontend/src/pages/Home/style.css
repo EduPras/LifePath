@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.sec1{
+    background-color: #282828;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+header{
+    margin: 15px;
+    display: flex;
+    position: absolut;
+    justify-content: space-evenly;
+
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-evenly;
+}
+.login{
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header h1{
+    font-family: Raleway;
+    font-style: normal;
+    font-size: 1.3rem;
+    color: #0D8FB8;
+    transition: all 0.25s;
+}
+
+.menu h1:hover,
+header button:hover{
+    color: rgb(20, 105, 131);
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+header button{
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-family: Roboto;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: bold;
+    color: #0D8FB8;
+}
+
+.mt-green{
+    position: absolute;
+    width: 100%;
+    bottom: -9.5%;
+    left: -3px;
+    z-index: 0;
+}
+
+.moon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 13%;
+    transform: translate(-50%, 0);
+    width: 200px;
+    height: 200px;
+    background-color: #0D8FB8;
+    border-radius: 50%;
+    position: absolute;
+    background: linear-gradient(199.51deg, rgba(100, 100, 100, 0.3) 10.27%, rgba(0, 0, 0, 0.31) 89.43%), rgba(208, 208, 208, 0.2);
+    z-index: 10;
+    transition: ease-in 0.25s;
+}
+
+.moon h2{
+    font-family: Roboto;
+    margin-top: 7px;
+    color: #fff;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 29px;
+    text-align: right;
+    transition: ease-in 0.25s;
+
+}
+
+.moon:hover{
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), rgba(123, 223, 242, 0.2);
+    box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.35);
+    transition: ease-out 0.25s;   
+    cursor: pointer;
+}
+
+.moon:hover h2{
+    color: #000;
+    transition: ease-out 0.25s;   
+}
+
+
+.titulo{
+    display: flex;
+    width: 40%;
+    height: 60%;
+    flex-direction: column;
+    z-index: 10;
+    position: absolute;
+    top: 30%;
+    left: 9%;
+}
+
+.titulo p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+    color: #F3F3F3;
+    margin-top: 60px;
+    z-index: 10;
+}
+
+.titulo button{
+
+    margin-top: 60px;
+    padding: 3px;
+    width: 15%;
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 35px;
+    color: #12AEDF;
+    outline: none;
+    border: none;
+    border-left: 4px solid #12AEDF ;
+    padding-left: 10px;
+    z-index: 10;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right,rgb(40, 40, 40)50%,#12AEDF 50%);
+    transition: all 0.25s;
+}
+
+.titulo button:hover{
+    background-position: -100% 0;
+    color: #000;
+    transition: 0.25s;
+    cursor: pointer;
+}
