@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap');
+
+.mykey{
+    background-color: rgba(0, 0, 0, 0.616);
+    font-family: 'Open Sans', sans-serif;
+    color:#fff;
+    width: 80%;
+    margin-right: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.mykey::-webkit-scrollbar{
+    width: 12px;
+    color: #000;
+
+    border-radius: 10px;
+ }
+ 
+.mykey::-webkit-scrollbar-thumb{
+     background-color: #0d8fb8;
+     border-radius: 10px;
+}
+
+
+.mykey .mykeys{
+    padding: 10px;
+    font-weight: lighter;
+    margin-left: 20px;
+
+}
+
+.mykey .mykeys h1{
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.mykey .mykeys ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mykey .mykeys ul li{
+    padding: 10px;
+    width: 400px;
+    height: 200px;
+    background-color: #0d8fb8;;
+    margin: 10px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.mykey .mykeys ul li:hover{
+    background-color:#105f77;
+    transform: scale(1.02);
+    transition: 0.25s;
+}
+
+.mykey .mykeys ul li h2{
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.mykey .mykeys ul li h3{
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.mykey .mykeys ul li p{
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+
+#viz{
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightgray;
+    font: 22pt arial;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+}
+
+#preview{
+    display: none;
+}
+
+#preview button{
+    position: absolute;
+    z-index: 2;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    background-color: #b80d0d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+#preview button:hover{
+    background-color: #8f0a0a;
+    transition: 0.25s;
+}

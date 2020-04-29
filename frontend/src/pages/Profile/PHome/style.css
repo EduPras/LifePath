@@ -1,0 +1,51 @@
+.home{
+    width: 80%;
+    margin-right: 30px;
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 40%;
+    font-size: 1rem;
+    font-family: Roboto;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+
+    border-radius: 5px;
+    color: #fff;
+    height: 300px;
+    box-shadow: 10px 10px 0px #000;
+    transition: 0.25s;
+    overflow: hidden;
+}
+
+.card.key{
+    background-color: #0d8fb8;
+}
+
+.card.query{
+        background-color: #b24c63;
+}
+
+.card h2{
+    margin-bottom: 10px;
+}
+
+.card:hover{
+    transform: scale(1.03);
+    transition: 0.25s;
+    box-shadow: 20px 20px 0px #000;
+}
+
+.text{
+    background-color: #aac11c;
+    color: #fff;
+    width: 300px;
+    padding: 20px;
+    transition: 0.25s;
+}

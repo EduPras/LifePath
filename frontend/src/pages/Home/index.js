@@ -12,7 +12,7 @@ export default function Routes(){
         <>
             <section className="sec1">
                 <div className="container">
-                    <header >
+                    <header className="header_home" >
                         <div className="menu">
                             <h1>HOME</h1>
                             <h1>ABOUT</h1>
@@ -39,7 +39,7 @@ export default function Routes(){
                         <h2>QUERY</h2>
                     </div>
             
-                    <img src={Mountain} className="mt-green" alt=""/>
+                    <img src={Mountain} className="mt-green-home" alt=""/>
 
                 </div>
                 

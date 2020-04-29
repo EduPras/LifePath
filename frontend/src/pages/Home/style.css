@@ -17,10 +17,10 @@
     position: relative;
     height: 100%;
 }
-header{
+.header_home{
     margin: 15px;
     display: flex;
-    position: absolut;
+
     justify-content: space-evenly;
 
 }
@@ -37,7 +37,7 @@ header{
     justify-content: flex-end;
 }
 
-header h1{
+.header_home h1{
     font-family: Raleway;
     font-style: normal;
     font-size: 1.3rem;
@@ -46,13 +46,13 @@ header h1{
 }
 
 .menu h1:hover,
-header button:hover{
+.header_home button:hover{
     color: rgb(20, 105, 131);
     cursor: pointer;
     transition: all 0.25s;
 }
 
-header button{
+.header_home button{
     outline: none;
     background-color: rgba(0, 0, 0, 0);
     border: none;
@@ -63,7 +63,7 @@ header button{
     color: #0D8FB8;
 }
 
-.mt-green{
+.mt-green-home{
     position: absolute;
     width: 100%;
     bottom: -9.5%;
