@@ -17,7 +17,7 @@ export default function Main(){
                     
 
                     <label for="">Description:</label>
-                    <input type="text" id="desc" name="" id=""/>
+                    <textarea type="text" id="desc" name="" id=""/>
                 </div>
 
                 <div className="keys">

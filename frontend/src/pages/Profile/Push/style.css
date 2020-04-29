@@ -30,11 +30,10 @@ form .title{
     font-weight: 700;
 }
 
-form .title input{
+form .title input, form .title textarea{
     background-color: rgba(255,255,255, 0.1);
     padding: 5px;
     outline: none;
-    width: max-content;
     border: 2px solid #0d8fb8;
     border-radius: 5px;
     color: #fff;
@@ -45,8 +44,8 @@ form .title #title{
     width: 20%;
 }
 
-form .title #desc{
-    width: 80%;
+form .title textarea{
+    font-size: 1.3rem;
     min-height: 50px;
 }
 

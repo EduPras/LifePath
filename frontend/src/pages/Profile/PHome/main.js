@@ -4,15 +4,16 @@ import { Link, useHistory } from 'react-router-dom';
 export default function Main (){
     return(
         <main className="home">
-            <a className="card key"href="#">
+
+            <Link className="card key"to="/profile/push">
                 <h2>Push a new KEY</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero enim aliquid quisquam voluptatum fugit, minima modi dicta recusandae, delectus aperiam eaque sit ducimus aut perspiciatis earum officia provident atque est?</p>
-            </a>
+            </Link>
 
-            <a className="card query"href="#">
+            <Link className="card query_card"to="/query">
                 <h2>Make your query</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero enim aliquid quisquam voluptatum fugit, minima modi dicta recusandae, delectus aperiam eaque sit ducimus aut perspiciatis earum officia provident atque est?</p>
-            </a>
+            </Link>
             
         </main>
     )

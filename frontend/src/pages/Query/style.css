@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.query{
+    width: 100vw;
+    height: 100vh;
+    background-color: #282828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_query{
+    width: 100%;
+    height: 100%;
+    background: #F2F2F2;
+    display: grid;
+    grid-template-areas: 
+    'search  list  preview '
+    'ad  list  preview '
+    'ad  list  preview ';
+
+    overflow: hidden;
+    grid-template-columns: 20% 20% 60%;
+    grid-template-rows: 40% auto auto;
+}
+/**search box */
+.search{
+    grid-area: search;
+}
+
+.search_container{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    margin-top:40px;
+    margin-left:40px;
+}
+
+.search_container h1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+}
+.box input,
+.box select{
+    background: #FFFFFF;
+    border: 1px solid #B8B8B8;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+    margin-top: 30px;
+    color: #000;
+}
+
+
+.box{
+    width: 80%;
+    margin: 10px 0px 30px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Ad box*/ 
+.ad {
+    grid-area: ad;
+
+}
+
+.adverstising{
+    background-color: #C4C4C4   ;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+
+/* List box*/
+.list{
+    grid-area: list;
+}
+
+.list_container{
+    margin: 30px 0px 30px 0px; 
+    width: 100%;
+    height: 91%;
+    margin: auto;
+    margin-top: 40px;
+    border-left: solid 1px #333;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list_box{
+
+    width: 80%;
+    height: 100%;
+    position: relative;
+}
+
+.list_box ul{
+    list-style: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: inherit;
+    position: absolute;
+    width: 100%;
+}
+
+.list_box ul::-webkit-scrollbar{
+   width: 12px;
+}
+
+.list_box ul::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent, #aaa);
+    border-radius: 10px;
+
+ }
+
+ .list_box ul::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent, #888);
+ }
+
+.list_box ul li{
+    width: 90%;
+    height: 50px;
+    background-color: orangered;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s;
+}
+.list_box ul li:hover{
+    cursor: pointer;
+    background-color: rgb(206, 58, 4);
+    transition: 0.25s;
+}
+.list_box ul li h1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;    
+    color: #FFFFFF;
+}
+
+
+/* Preview */
+.preview{
+    grid-area: preview;
+    
+}
+
+.preview_container{
+    width: 95%;
+    height: 91%;
+    margin: auto;
+    margin-top: 40px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.title{
+    height: 5%;
+
+    width: 100%;
+}
+.title_box{
+    width: 150px;
+    height: 80%;
+    background-color: orangered;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.title_box h3{
+    font-family: Roboto;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1rem;
+}
+.preview_box{
+    height: 95%;
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    display: grid;
+    grid-template-areas: 
+    'about about'
+    'orders sentences';
+    grid-template-rows: 30% 70%;
+    grid-template-columns: 20% 80%;
+    border: 2px solid rgba(150, 150, 150, 0.322);
+}
+
+.about{
+    grid-area: about;
+    margin: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.about h1{
+    font-size: 20px;
+}
+
+.about h4{
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.about h3{
+    font-size: 15px;
+    color: #0D8FB8;
+}
+
+
+
+
+.orders{
+    grid-area: orders;
+
+}
+.orders_box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.orders_box ul{
+    list-style: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: inherit;
+    position: absolute;
+    width: 100%;
+}
+
+.orders_box ul li{
+    width: 90%;
+    height: 25px;
+    margin: 10px auto;
+    background-color: #EBEBEB;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.1s;
+}
+
+.orders_box ul li:hover{
+    transform: scale(1.07);
+    transition: 0.1s;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 10px #929292;
+}
+
+.orders_box h1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.orders_box ul::-webkit-scrollbar{
+    width: 12px;
+ }
+ 
+ .orders_box ul::-webkit-scrollbar-thumb{
+     background: linear-gradient(transparent, #aaa);
+     border-radius: 10px;
+ 
+  }
+ 
+  .orders_box ul::-webkit-scrollbar-thumb:hover{
+     background: linear-gradient(transparent, #888);
+ 
+  }
+
+
+.sentences{
+    grid-area:sentences;
+
+}
+
+.senteces_box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.senteces_box ul{
+    list-style: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: inherit;
+    position: absolute;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.senteces_box ul h1{
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 25px;
+    margin: 20px;
+}
+
+.senteces_box ul li{
+    width: 90%;
+    margin: 10px auto 5px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.senteces_box ul li img{
+    margin-top: 10px;
+} 
+.sentence_found{
+    background: rgb(223, 223, 223);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.senteces_box p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.senteces_box ul::-webkit-scrollbar{
+    width: 12px;
+ }
+ 
+ .senteces_box ul::-webkit-scrollbar-thumb{
+     background: linear-gradient(transparent, #aaa);
+     border-radius: 10px;
+ 
+  }
+ 
+  .senteces_box ul::-webkit-scrollbar-thumb:hover{
+     background: linear-gradient(transparent, #888);
+ 
+  }
