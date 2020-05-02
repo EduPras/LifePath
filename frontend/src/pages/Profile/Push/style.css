@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300&700&display=swap');
 
-.push{
+main{
     font-family: Roboto;
     font-weight: 300;
     color: #fff;
-    width: 75%;
+    width: 75%;   
     overflow: hidden;
-    overflow-y: scroll;
+
+
 }
 
-.push h1{
+main h1{
     font-size: 2rem;
     width: 90%;
 }
 
-.push p{
+main p{
     font-size: 1rem;
 }
 
 form{
     font-size: 1.2rem;
-    width: 100%;
 }
 form .title{
     display: flex;
@@ -40,12 +40,16 @@ form .title input, form .title textarea{
     font-size: 1rem;
 }
 
+textarea{
+    width: 99%;
+}
+
 form .title #title{
     width: 20%;
 }
 
-form .title textarea{
-    font-size: 1.3rem;
+form .title #desc{
+    width: 80%;
     min-height: 50px;
 }
 
@@ -55,95 +59,145 @@ form .keys{
     width: 100%;
     color: black;
     border-radius: 10px;
-}
-form .keys ul{
     display: flex;
-    flex-direction: column;
-    
-    
+    height: 500px;
+    overflow: hidden;
 }
-form .keys li{
-    padding: 20px;
+
+form .keys .new{
+    width: 60%;
+    background-color: rgb(255, 255, 255);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-form .keys label{
-    margin: 10px;
-}
-form .keys span{
-    width: 100%;
-    height: 1px;
-    background-color: #9f9f9f;
-    display: block;
-    margin-top: 30px;
-}
-
-form .keys img{
-    margin-right: 10px;
-    margin-left: 50px;
-}
-
-form .keys #desc{
+form .keys .new .new_container{
     width: 80%;
-}
-
-form .keys input{
-    background: #E6E6E6;
-    border: 1px solid #B7B7B7;
-    box-sizing: border-box;
-    font-size: 1rem;
-    padding: 5px;
-    outline: none;
-    border-radius: 5px;
-}
-main::-webkit-scrollbar{
-    width: 12px;
-    color: #000;
-
+    height: 70%;
     border-radius: 10px;
- }
- 
-main::-webkit-scrollbar-thumb{
-     background-color: #0d8fb8;
-     border-radius: 10px;
+    display: inline-grid;
 }
 
-form button#add{
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #4CCB77;
-    cursor: pointer;
-    color: white;
-    outline: none;
+form .keys .new .new_container label{
+    font-size: 1.2rem;
+}
+
+form .keys .new .new_container input{
+    background-color: transparent;
     border: none;
-    font-size: 2rem;
-    margin: 10px auto;
-    transition: 0.25s;
+    border-radius: 5px;
+    border: solid 2px #47C6A0;
+    padding: 5px;
+    color:rgb(0, 0, 0);
+    font-size: 1.2rem;
+    outline: none;
+    margin: 10px 0px 10px 0px;
+    width: 100%;
 }
 
-form button#add:hover{
-    transform: translate(0, -10%);
-    transition: 0.25s;
-    background-color: rgb(64, 160, 96);
-
+form .keys .new .new_container select,
+form .keys .new .new_container button{
+    border: none;
+    outline: none;
+    background-color: #EB6464;
+    color: white;
+    padding: 5px;    
+    border-radius: 5px; 
+    font-size: 1.0rem;
+    cursor: pointer;
+    width: 100px;
 }
 
-form button#previewButton{
-    width: 200px;
-    margin: 10px auto 20px auto ;
+
+form .keys .new .new_container button{
     background-color: #0d8fb8;
-    color: white;
-    padding: 10px;
-    font-size: 1.3rem;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    padding: 8px 15px;
+    width: 150px;
+    margin-top: 20px;
     transition: 0.25s;
 }
- 
-form button#previewButton:hover{
-    background-color: #0a6b88;
+
+form .keys .new .new_container button:hover{
+    background-color: #0b6885;
+    transition: 0.25s;
+}
+
+
+form .keys .show{
+    width: 40%;
+    padding: 20px;  
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+form .keys .show ul{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+form .keys .show ul h1{
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 10px 0px 10px 0px;
+}
+
+form .keys .show ul li{
+    padding: 5px;
+    font-size: 1rem;
+    background-color: #EB6464;
+    opacity: 0.8;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+form .keys .show .key_order li{
+    background-color: #47C6A0;
+}
+
+form .keys .show ul li:hover{
+    opacity: 1;
+    transition: 0.25s;
+}
+
+.bts{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#finish{
+    background-color: transparent;
+    color: red;
+    border: 2px solid red;
+}
+
+#finish:hover{
+    background-color: red;
+    color:white;
+    transition: 0.25s;
+}
+
+#sc_parent{
+    width: 102%;
+    padding: 1px;
+    border: solid 2px rgb(110, 110, 110);
+    color: black;
+    background-color: transparent;
+    transition: 0.25s;
+    margin-bottom: 15px;
+}
+
+#sc_parent:hover{
+    background-color: rgb(230, 230, 230);
     transition: 0.25s;
 }
