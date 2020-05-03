@@ -1,10 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import api from '../../services/api';
+
 import './style.css';
-import vector from '../images/Vector.png'
+import vector from '../images/Vector.png';
+
 
 export default function Query(){
+
+    const [queries, setQueries] = useState([]);
+
+    useEffect(() => {
+        api.get('/query').then(response => {
+          console.log(response.data.Queries);
+          setQueries(response.data.Queries);
+          console.log(queries)
+        })
+        
+      }, []); 
+
+
     return(
         <section className="query">
             <div className="container_query">
@@ -34,11 +50,14 @@ export default function Query(){
                     <div className="list_container">
                         <div className="list_box">
                             <ul>
-                                <li>
+                                {queries.map( e => (
+                                    <li>
                                     <div className="order">
-                                        <h1>TCC ordens teste</h1>
+                                        <h1>{e.title}</h1>
                                     </div>
                                 </li>
+                                ))}
+                                
                             </ul>
                         </div>
 

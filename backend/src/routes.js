@@ -13,8 +13,6 @@ const routes = express.Router();
 
 // query page
 routes.get('/query', queryController.index);
-routes.get('/query/preview', previewController.index);
-routes.get('/query/preview/path', pathController.index);
 
 // profile page
 routes.post('/profile/push', pushController.create);

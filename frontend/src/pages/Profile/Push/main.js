@@ -3,33 +3,49 @@ import { Link, useHistory } from 'react-router-dom';
 
 import api from '../../../services/api';
 
-import vector from '../../images/Vector.png'
-
 
 export default function Main(){
+
+    // Variables
 
     const user = localStorage.getItem('user');
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
-    const [keys, setKeys] = useState([{"shortcut":'Inicio'}]);
+    const [keys, setKeys] = useState([]);
     const [family, setFamily] = useState([]);
 
     const [sentence, setSentence] = useState('');
     const [nameShortcut, setNameShortcut] = useState('');
 
-
     const [keyRequest, setKeyrequest] = useState([]);
-    
+
+
+
+    // Functions
+
+    // Counter key, max:2
+
+    function handleBind(b){
+        keys.map(e => {
+            if(e.shortcut === b){
+                e.bind += 1;
+            }
+        })
+    }
+
+
+
+    // Send a key
+
     async function handleSend(e){
         e.preventDefault();
        
         const x = document.getElementById('type');
         const y = document.getElementById('sc_parent');
 
-        var z = y.options[y.selectedIndex].value;
-
+        handleBind( y.options[y.selectedIndex].value);
 
         
         console.log( y.options[y.selectedIndex].value + ' ligado a chave: '+ nameShortcut)
@@ -60,18 +76,20 @@ export default function Main(){
             }]);
         }
 
+        setSentence('');
+        setNameShortcut('');
+
     }
 
 
 
-
-
+    // Send request
 
     async function handleSubmit(e){
         const request = {
             "title":title,
             "description":description,
-            "shortcut":'Início',
+            "shortcut": `Início: ${title}`,
             "keys": [...keyRequest]
         }
     
@@ -92,6 +110,9 @@ export default function Main(){
         }
     }
 
+
+    // Return HTML
+
     return(
         <main>
                 <h1>Push a key</h1>
@@ -104,7 +125,10 @@ export default function Main(){
                             id="title"
                             type="text" 
                             onChange={ 
-                                e => setTitle(e.target.value)
+                                e => {
+                                       setTitle(e.target.value);
+                                       setKeys([{"shortcut": `Início: ${e.target.value}`, "bind":0}])
+                                }
                             }/>
             
 
@@ -126,7 +150,9 @@ export default function Main(){
 
                                 <select name="" id="sc_parent">
                                     {keys.map(e=>{
-                                       return <option value={e.shortcut}>{e.shortcut}</option>
+                                        if(e.bind <2){
+                                            return <option value={e.shortcut}>{e.shortcut}</option>
+                                        }
                                     })}
                                 </select>
 
@@ -162,7 +188,8 @@ export default function Main(){
                         <div className="show">
                             <ul>
                                 <h1>Keys</h1>
-                                {keys.map(e=>(                                        
+                                {keys.map(e=>(  
+
                                         <li>{e.shortcut}</li>
                                 ))}
                                
