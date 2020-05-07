@@ -5,16 +5,14 @@ module.exports = async (request, response) => {
         tx.run(
             `
             MATCH (a:query) 
-            MATCH (a)-[:create_by]->(u:user)
-            RETURN a.title, u.name
+            RETURN a.title
             ` ,
             )        
         );    
     
     return response.json({"Queries":result.records.map( query =>{  
         return {
-            "title":query.get(0),
-            "creator":result.records[0].get(1)
+            "title":query.get(0)
         }
     })});
 }

@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 export default function Main (){
     return(
-        <main className="home">
+        <main className="home_profile">
 
             <Link className="card key"to="/profile/push">
                 <h2>Push a new KEY</h2>

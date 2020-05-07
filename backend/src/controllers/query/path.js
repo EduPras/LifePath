@@ -7,7 +7,8 @@ module.exports = async (request, response) => {
     const result = await connection.session.writeTransaction(tx =>
         tx.run(
             `
-            MATCH p = (:key{shortcut:"${parent}"})-[*]->(:family{name:"${order}"})
+            MATCH(q:query{title:"${parent}"})-[:query_init]->(k:key)
+            MATCH p = (k)-[*]->(:family{name:"${order}"})
             RETURN p
             ` ,
             )        
