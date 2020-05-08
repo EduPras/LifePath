@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import {MdClose, MdFormatSize} from 'react-icons/md';
+import {MdClose} from 'react-icons/md';
 
 import vector from '../images/Vector.png';
 

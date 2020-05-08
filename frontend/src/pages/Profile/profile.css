@@ -6,12 +6,11 @@
 }
 
 body{
-    background-color: #282828;
     height: 100vh;
+    background-color: #282828;
     overflow: hidden;
 
 }
-
 
 
 .header_profile{
