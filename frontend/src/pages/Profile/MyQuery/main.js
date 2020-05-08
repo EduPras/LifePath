@@ -7,13 +7,15 @@ import Preview from '../../Preview';
 
 export default function Main(){
 
+    const user = localStorage.getItem('user');
+
     const [titlePreview, setTitlePreview] = useState('');
     const [queries, setQueries] = useState([]);
 
     useEffect(() => {
         api.get('profile/queries', {
           headers: {
-            user: 'edupras',
+            user: user,
           }
         }).then(response => {
           setQueries(response.data);

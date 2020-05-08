@@ -158,7 +158,7 @@ export default function Routes(){
                             </div>
                             <h1>Login</h1>
                             <input type="text" placeholder="User" onChange = { e => setUserLogin(e.target.value)}/>
-                            <input type="text" placeholder="Password" onChange = { e => setPasswdLogin(e.target.value)}/>
+                            <input type="password" placeholder="Password" onChange = { e => setPasswdLogin(e.target.value)}/>
                             <a onClick = { e =>  openRegister(e)}>Doesn't have an account? Register</a>
                             <a id="login_failed">Data does not match</a>
                             <button onClick= { e => handleLogin(e)}>Log in</button>
@@ -174,8 +174,8 @@ export default function Routes(){
                             <input type="text" placeholder="Name" onChange = { e => setName(e.target.value)}/>
                             <input type="text" placeholder="User" id="user" onChange = { e => setUser(e.target.value)}/>
                             <input type="text" placeholder="Email" onChange = { e => setEmail(e.target.value)}/>
-                            <input type="text" placeholder="Password" onChange = { e => setPassword(e.target.value)}/>
-                            <input type="text" id="rpassword" placeholder="Retype password" onChange = { e => setRPassword(e.target.value)}/>
+                            <input type="password" placeholder="Password" onChange = { e => setPassword(e.target.value)}/>
+                            <input type="password" id="rpassword" placeholder="Retype password" onChange = { e => setRPassword(e.target.value)}/>
                             <a href="" onClick = { e => openLogin(e)} >Already have an account?</a>
                             <a id="user_failed">User Unavailable</a>
                             <a id="passwd_failed">Retype your password again</a>

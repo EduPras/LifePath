@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import {MdClose} from 'react-icons/md';
+
 
 import api from '../../services/api';
 import Preview from '../Preview';
@@ -26,6 +28,11 @@ export default function Query(){
 
     return(
         <section className="query">
+            <Link to="/">
+                <div className="close_query">
+                    <MdClose size="1.5rem" color="black" />
+                </div>
+            </Link>
             <div className="container_query">
                 <div className="search">
                     <div className="search_container">

@@ -92,3 +92,12 @@ aside a:hover{
     bottom: -8%; 
     z-index: -10;
 }
+
+#logoff{
+    color: rgb(236, 85, 85);
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
