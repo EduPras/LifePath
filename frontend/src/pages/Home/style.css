@@ -262,6 +262,17 @@
     margin: 30px auto 10px auto;
 }
 
+#user_failed{
+    color: red;
+    cursor: default;
+    display: none;
+}
+
+#passwd_failed{
+    color: red;
+    cursor: default;
+    display: none;
+}
 
 /* Login */
 
@@ -346,4 +357,9 @@
     width: 100px;
     margin: 5px auto 0 auto;
     text-align: center;
+}
+
+#login_failed{
+    color: red;
+    display: none;
 }
