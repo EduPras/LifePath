@@ -1,7 +1,8 @@
 const connection = require('../../database/connection');
 const path = require('./path');
 const preview = require('./preview');
-const query = require('./query')
+const query = require('./query');
+const find = require('./find');
 
 // Busca de chaves 
 
@@ -11,13 +12,16 @@ module.exports = {
         const { type } = request.body;
 
         if(type==='query'){
-            query(request, response);
+            await query(request, response);
         }
         else if( type === 'preview'){
-            preview(request, response)
+            await preview(request, response)
         }
         else if( type === 'path'){
-            path(request, response);
+            await path(request, response);
+        }
+        else if( type === 'find'){
+            await find(request, response);
         }
 
     }

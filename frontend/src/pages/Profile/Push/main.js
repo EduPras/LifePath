@@ -99,7 +99,7 @@ export default function Main(){
         try {
              const response = await api.post('profile/push', request, {
                 headers:{
-                    user: 'yuri'
+                    user: user
                 }
             }
             );

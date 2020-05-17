@@ -4,18 +4,29 @@ module.exports = async (request, response) => {
     const { order } =  request.query;
     const { parent } = request.body;
 
-    const result = await connection.session.writeTransaction(tx =>
-        tx.run(
-            `
-            MATCH(q:query{title:"${parent}"})-[:query_init]->(k:key)
-            MATCH p = (k)-[*]->(:family{name:"${order}"})
-            RETURN p
-            ` ,
-            )        
-        );    
+    const session =  connection.driver.session();
 
-    return response.json(result.records[0].get(0).segments.map( x => {
-        return x.relationship.properties.sentence
-    }));
+    try{
+        const result = await session.writeTransaction(tx =>
+            tx.run(
+                `
+                MATCH(q:query{title:"${parent}"})-[:query_init]->(k:key)
+                MATCH p = (k)-[*]->(:family{name:"${order}"})
+                RETURN p
+                ` ,
+                )        
+            );    
+        
+    
+        return response.json(result.records[0].get(0).segments.map( x => {
+            return x.relationship.properties.sentence
+        }));
+    }catch(e){
+        console.log('[Erro] '+ e)
+    }finally{
+        await session.close();
+    }
+
+    
 
 }

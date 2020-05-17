@@ -54,7 +54,7 @@ export default function Preview( {titlePreview}){
         <div className="preview">
             <div className="preview_container">
                 <div className="title">
-                    <div className="title_box">
+                    <div className="title_box" onClick={()=> {document.querySelector('.find').style.display = "flex"}}>
                         <h3>Preview</h3>
                     </div>
 

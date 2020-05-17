@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import {MdClose} from 'react-icons/md';
 
 
 import api from '../../services/api';
 import Preview from '../Preview';
+import Find from '../Find';
+import {MdClose} from 'react-icons/md';
 
 import './style.css';
 
@@ -19,11 +20,17 @@ export default function Query(){
 
 
     useEffect(() => {
-        api.post('/query', {type: 'query'}).then(response => {
-          setQueries(response.data.Queries);
-        })
+        async function getQueries(){
+            await api.post('/query', {type: 'query'}).then(response => {
+                setQueries(response.data.Queries);
+              })
+        }
+        
+        getQueries();
         
       }, []); 
+
+    
 
 
     return(
@@ -61,8 +68,9 @@ export default function Query(){
                             <ul>
                                 {queries.map( query => (
                                     <li key={query.title} 
-                                        onClick = { () => 
-                                            setTitlePreview(query.title)}>
+                                        onClick = { () => {
+                                            document.querySelector('.title_box').style.display = "flex";
+                                            setTitlePreview(query.title)}}>
                                     <div className="order">
                                         <h1 >{query.title}</h1>
                                     </div>
@@ -74,8 +82,12 @@ export default function Query(){
                     </div>
                 </div>
 
-                <Preview titlePreview = {titlePreview}/>                          
+                <Preview titlePreview = {titlePreview}/> 
+                <Find titlePreview = {'Início: '+titlePreview}/>                         
             </div>
+
+
+
 
         </section>
     )

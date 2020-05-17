@@ -17,11 +17,7 @@ module.exports = async (request, response)=>{
     
         const true_password =  result.records[0].get(0); 
 
-        console.log(true_password);
-        console.log(password);
-
         const compare = await hash.compare_passwords(password, true_password);
-        console.log(compare)
     
         if(compare){
             return response.json("0")
@@ -31,7 +27,7 @@ module.exports = async (request, response)=>{
         }
     
     } catch (error) {
-        console.log(error)
+        console.log('ERRO'+error+'\n---------------------------------------------------')
     }
     
 }

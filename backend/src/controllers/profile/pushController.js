@@ -9,6 +9,9 @@ module.exports ={
 
 
         try {
+
+            const session = await connection.driver.session();
+
             await connection.session.writeTransaction(async tx=>{
                 await tx.run(
                     `
@@ -33,7 +36,6 @@ module.exports ={
                             return a, parent
                             `
                         )
-                        console.log(x.records)
                     }
                     if(key.type==='family'){
                         var x = await tx.run(
@@ -43,14 +45,15 @@ module.exports ={
                             MERGE (a)<-[x:especify{sentence:"${key.sentence}"}]-(parent)
                             return a, parent
                             `
-                        )
-                        console.log(x.records);
+                        );
                     }
                 })
                 return response.json({"message":"adicionado"})
             })
         } catch (error) {
-            console.log(error)
+            console.log('ERRO:'+error+'\n-----------------------------------------------------------------')
+        }finally{
+            await session.close();
         }
 
        

@@ -13,8 +13,6 @@ module.exports = {
                 return u.password
                 ` ,       
             );   
-
-        console.log(result.records[0].get(0));
                 
         if(hash.compare_passwords(password, result.records[0].get(0))){
             const newHashedPassword = await hash.hashed(new_password);
