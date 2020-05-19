@@ -1,8 +1,10 @@
-const connection = require('../../database/connection');
+const driver = require('../../database/connection');
 
 // Adicionar uma chave para ser analisada
 module.exports ={
     async create(request, response){
+        const session = driver.session();
+
         const queries = request.body;
 
         const user =  request.headers.user;
@@ -10,9 +12,7 @@ module.exports ={
 
         try {
 
-            const session = await connection.driver.session();
-
-            await connection.session.writeTransaction(async tx=>{
+            await session.writeTransaction(async tx=>{
                 await tx.run(
                     `
                     MATCH (u:user{user_login:"${user}"})
@@ -54,10 +54,6 @@ module.exports ={
             console.log('ERRO:'+error+'\n-----------------------------------------------------------------')
         }finally{
             await session.close();
-        }
-
-       
-
-        
+        }       
     }
 }

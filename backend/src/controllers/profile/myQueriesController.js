@@ -1,4 +1,4 @@
-const connection = require('../../database/connection');
+const driver = require('../../database/connection');
 
 // Listagem das queries criadas pelo usuário
 
@@ -7,7 +7,7 @@ module.exports = {
 
         const user  =  request.headers.user;
 
-        const session = await connection.driver.session();
+        const session = driver.session();
 
         try{
             
@@ -27,13 +27,10 @@ module.exports = {
                     "description":  result.get(0).properties.description
                 }
             }));
+        }catch(error){
+            console.log('[MyQueries] ERROR: '+error+'\n---------------------------------------------------')
         }finally{
             await session.close();
         }
-        
-
-
     }
-
-
 }

@@ -1,11 +1,13 @@
-const connection = require('../../database/connection');
+const driver = require('../../database/connection');
 const hash = require('../../services/hash')
 
 module.exports = async (request, response)=>{
     try {
+        const session = driver.session();    
+    
         const { user, password } = request.body;
     
-        const result = await connection.session.writeTransaction(tx =>
+        const result = await session.writeTransaction(tx =>
             tx.run(
                 `
                 MATCH (u:user{user_login:"${user}"})
@@ -27,7 +29,9 @@ module.exports = async (request, response)=>{
         }
     
     } catch (error) {
-        console.log('ERRO'+error+'\n---------------------------------------------------')
+        console.log('[Login] ERROR: '+error+'\n---------------------------------------------------')
+    } finally {
+        await session.close();
     }
     
 }

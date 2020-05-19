@@ -7,7 +7,5 @@ const password = "lifepath";
 
 // Conexão com banco de dados
 const driver =  neo4j.driver(uri, neo4j.auth.basic(user, password));
-const session =  driver.session();
 
-
-module.exports={ driver, session };
+module.exports = driver;
