@@ -1,4 +1,3 @@
-const connection = require('../../database/connection');
 const path = require('./path');
 const preview = require('./preview');
 const query = require('./query');

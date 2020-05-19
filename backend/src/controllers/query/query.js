@@ -1,8 +1,8 @@
-const connection = require('../../database/connection');
+const driver = require('../../database/connection');
 
 module.exports = async (request, response) => {
 
-    const session =  connection.driver.session();
+    const session = driver.session();
 
     try{
         const result = await session.writeTransaction(tx =>
@@ -19,6 +19,8 @@ module.exports = async (request, response) => {
                 "title":query.get(0)
             }
         })});
+    }catch(e){
+        console.log('[Query] ERROR: '+e)
     }finally{
         await session.close();
     }

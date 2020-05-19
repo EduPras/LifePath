@@ -41,7 +41,7 @@ module.exports = {
             }
 
         } catch (error) {
-            console.log('[Profile] ERROR: '+error+'\n---------------------------------------------------')
+            console.log('[Profile] ERROR: '+error)
         }finally{
             await session.close();
         }

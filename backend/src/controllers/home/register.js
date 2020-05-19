@@ -38,7 +38,7 @@ module.exports =
                 return response.json("Adicionado")
             }
         } catch (error) {
-            console.log('[Register] ERROR: '+error+'\n---------------------------------------------------')
+            console.log('[Register] ERROR: '+error)
         } finally{
             await session.close();
         }

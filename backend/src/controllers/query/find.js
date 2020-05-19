@@ -1,11 +1,11 @@
-const connection = require('../../database/connection');
+const driver = require('../../database/connection');
 
 module.exports = async (request, response) =>{
 
     const { parent, first } = request.body;
 
 
-    const session = connection.driver.session();
+    const session = driver.session();
 
     try {
         
@@ -29,7 +29,7 @@ module.exports = async (request, response) =>{
                 )              
             )
 
-            const session1 = connection.driver.session();
+            const session1 = driver.session();
             const key = result.records[0].get(0)
 
             if(key !== null){
@@ -59,9 +59,9 @@ module.exports = async (request, response) =>{
         
 
     } catch (error) {
-        console.log('[Find] - ERROR: '+error)
+        console.log('[Find] ERROR: '+error)
     }finally{
-        session.close();
+        await session.close();
     }
 
 }

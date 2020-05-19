@@ -14,7 +14,7 @@ export default function Main(){
     const [description, setDescription] = useState('');
 
     const [keys, setKeys] = useState([]);
-    const [family, setFamily] = useState([]);
+    const [order, setOrder] = useState([]);
 
     const [sentence, setSentence] = useState('');
     const [nameShortcut, setNameShortcut] = useState('');
@@ -51,8 +51,8 @@ export default function Main(){
         console.log( y.options[y.selectedIndex].value + ' ligado a chave: '+ nameShortcut)
         
 
-        if(x.options[x.selectedIndex].value === 'family'){
-            setFamily([... family, nameShortcut]);
+        if(x.options[x.selectedIndex].value === 'order'){
+            setOrder([... order, nameShortcut]);
 
             setKeyrequest([...keyRequest, {
                 "type":x.options[x.selectedIndex].value,
@@ -166,7 +166,7 @@ export default function Main(){
                                 </label>
 
                                 <select name="" id="type" on>
-                                    <option value="family">Family </option>
+                                    <option value="order">Order</option>
                                     <option value="key" >Key</option>
                                 </select>
 
@@ -196,7 +196,7 @@ export default function Main(){
                             </ul>
                             <ul className="key_order">
                                 <h1>Orders</h1>
-                                {family.map(e=>(
+                                {order.map(e=>(
                                     <li>{e}</li>
                                 ))}
                             </ul>

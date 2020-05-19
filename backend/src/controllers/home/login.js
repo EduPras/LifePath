@@ -2,8 +2,9 @@ const driver = require('../../database/connection');
 const hash = require('../../services/hash')
 
 module.exports = async (request, response)=>{
+    const session = driver.session();
+
     try {
-        const session = driver.session();    
     
         const { user, password } = request.body;
     
@@ -29,7 +30,7 @@ module.exports = async (request, response)=>{
         }
     
     } catch (error) {
-        console.log('[Login] ERROR: '+error+'\n---------------------------------------------------')
+        console.log('[Login] ERROR: '+error)
     } finally {
         await session.close();
     }

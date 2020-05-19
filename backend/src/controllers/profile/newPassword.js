@@ -32,7 +32,7 @@ module.exports = {
             }
                 
         } catch (error) {
-            console.log('[NewPassword] ERROR: '+error+'\n---------------------------------------------------')
+            console.log('[NewPassword] ERROR: '+error)
         }finally{
             await session.close();
         }

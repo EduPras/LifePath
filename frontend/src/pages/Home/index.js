@@ -173,7 +173,7 @@ export default function Routes(){
                             <h1>Register</h1>
                             <input type="text" placeholder="Name" onChange = { e => setName(e.target.value)}/>
                             <input type="text" placeholder="User" id="user" onChange = { e => setUser(e.target.value)}/>
-                            <input type="text" placeholder="Email" onChange = { e => setEmail(e.target.value)}/>
+                            <input type="email" placeholder="Email" onChange = { e => setEmail(e.target.value)}/>
                             <input type="password" placeholder="Password" onChange = { e => setPassword(e.target.value)}/>
                             <input type="password" id="rpassword" placeholder="Retype password" onChange = { e => setRPassword(e.target.value)}/>
                             <a href="" onClick = { e => openLogin(e)} >Already have an account?</a>
@@ -188,6 +188,7 @@ export default function Routes(){
                 </div>
                 
             </section>
+            <div className="bg"></div>
         </>
     )
 }

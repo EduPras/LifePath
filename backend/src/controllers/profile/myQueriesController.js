@@ -28,7 +28,7 @@ module.exports = {
                 }
             }));
         }catch(error){
-            console.log('[MyQueries] ERROR: '+error+'\n---------------------------------------------------')
+            console.log('[MyQueries] ERROR: '+error)
         }finally{
             await session.close();
         }

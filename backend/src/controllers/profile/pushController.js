@@ -37,11 +37,11 @@ module.exports ={
                             `
                         )
                     }
-                    if(key.type==='family'){
+                    if(key.type==='order'){
                         var x = await tx.run(
                             `
                             MATCH (parent:key) WHERE parent.shortcut = "${key.sc_parent}"
-                            MERGE (a:family{name:"${key.name}"})
+                            MERGE (a:order{name:"${key.name}"})
                             MERGE (a)<-[x:especify{sentence:"${key.sentence}"}]-(parent)
                             return a, parent
                             `
@@ -51,7 +51,7 @@ module.exports ={
                 return response.json({"message":"adicionado"})
             })
         } catch (error) {
-            console.log('ERRO:'+error+'\n-----------------------------------------------------------------')
+            console.log('ERRO:'+error)
         }finally{
             await session.close();
         }       

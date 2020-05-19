@@ -1,9 +1,9 @@
-const connection = require('../../database/connection');
+const driver = require('../../database/connection');
 
 module.exports = async (request, response) => {
     const { title } =  request.body;
 
-    const session = connection.driver.session();
+    const session = driver.session();
 
     try{
         const result = await session.writeTransaction(tx =>
@@ -12,7 +12,7 @@ module.exports = async (request, response) => {
                 MATCH (search:query{title:"${title}"}) 
                 MATCH (search)-[create_by]->(u:user)
                 MATCH (search)-[:query_init]->(a:key)
-                MATCH (a)-[*]->(c:family)
+                MATCH (a)-[*]->(c:order)
                 RETURN c, u.name, search.description
                 ` ,
                 )        
@@ -28,7 +28,7 @@ module.exports = async (request, response) => {
             }
         )
     }catch(e){
-        return
+        console.log('[Preview] ERROR: '+e)
     }finally{
         await session.close();
     }

@@ -1,17 +1,17 @@
-const connection = require('../../database/connection');
+const driver = require('../../database/connection');
 
 module.exports = async (request, response) => {
     const { order } =  request.query;
     const { parent } = request.body;
 
-    const session =  connection.driver.session();
+    const session = driver.session();
 
     try{
         const result = await session.writeTransaction(tx =>
             tx.run(
                 `
                 MATCH(q:query{title:"${parent}"})-[:query_init]->(k:key)
-                MATCH p = (k)-[*]->(:family{name:"${order}"})
+                MATCH p = (k)-[*]->(:order{name:"${order}"})
                 RETURN p
                 ` ,
                 )        
@@ -22,7 +22,7 @@ module.exports = async (request, response) => {
             return x.relationship.properties.sentence
         }));
     }catch(e){
-        console.log('[Erro] '+ e)
+        console.log('[Path] ERROR: '+ e)
     }finally{
         await session.close();
     }
