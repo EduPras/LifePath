@@ -1,9 +1,20 @@
-
+#Navigate{
+    position: fixed;
+    font-size: 58px;
+    top: 0;
+    left: 0;
+    color: white;
+    /* margin: auto; */
+    width: 100vw;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: 400;
+}
 .find{
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.82);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +29,17 @@
     display: flex;
     font-family: 'Open Sans', sans-serif;
     position: relative;
+    box-shadow: 
+    1px 1px  rgb(61, 136, 77),
+    2px 2px  rgb(61, 136, 77),
+    3px 3px  rgb(61, 136, 77),
+    4px 4px  rgb(61, 136, 77),
+    5px 5px  rgb(61, 136, 77),
+    6px 6px  rgb(61, 136, 77),
+    6px 6px  rgb(61, 136, 77),
+    7px 7px  rgb(61, 136, 77),
+    8px 8px  rgb(61, 136, 77),
+    9px 9px  rgb(61, 136, 77);
     
 }
 
@@ -39,7 +61,6 @@
 }
 .find .container_find .choose h1{
     margin-left: 40px;
-    margin-bottom: 23px;
     font-size: 20px;
 }
 .find .container_find .choose .parent_sentence{
@@ -80,8 +101,11 @@
 
 .find .container_find .chose .sentences_chose{
     height: 90%;
-    border-left: 1px solid #333;
     overflow: hidden;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #afccc0;
+    margin-right: 20px;
     overflow-y: scroll;
 }
 
@@ -101,6 +125,8 @@
 }
 .find .container_find .chose .sentences_chose h1{
     text-align: center;
+    color: rgb(40, 99, 45);
+    margin-top: 10px;
 }
 .find .container_find .chose .sentences_chose .path_chose{
     padding: 10px;
@@ -124,7 +150,8 @@
 
 .find .container_find .chose .sentences_chose .path_chose .path_sentence:hover{
     transform: scale(1.03);
-    background-color: rgb(96, 204, 119);
+    background-color: rgb(61, 136, 77);
+    color: white;
 }
 
 .find .container_find .close_choose{

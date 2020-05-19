@@ -23,7 +23,7 @@
 .title_box{
     width: 150px;
     height: 80%;
-    background-color: orangered;
+    background-color: #36889f;
     border-radius: 5px;
     display: none;
     justify-content: center;
@@ -34,7 +34,7 @@
 }
 
 .title_box:hover{
-    background-color: #0D8FB8;
+    background-color: rgb(32, 99, 119);
     transition: 0.25s;
 }
 

@@ -77,7 +77,7 @@ export default function Find({titlePreview}){
         }        
     }, [parent]);
 
-
+    
     async function handleParent(e, parent){
         e.preventDefault()
         setParent(parent);
@@ -86,6 +86,7 @@ export default function Find({titlePreview}){
 
     return(
             <div className="find">
+                <h2 id="Navigate">Navigate</h2>
                 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"/>
                 <div className="container_find">
                     <div className="close_choose" onClick= { () => { 

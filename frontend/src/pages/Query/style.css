@@ -139,7 +139,7 @@
 .list_box ul li{
     width: 90%;
     height: 50px;
-    background-color: orangered;
+    background-color: #36889f;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
@@ -149,7 +149,7 @@
 }
 .list_box ul li:hover{
     cursor: pointer;
-    background-color: rgb(206, 58, 4);
+    background-color: #265c6b;
     transition: 0.25s;
 }
 .list_box ul li h1{
