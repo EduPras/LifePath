@@ -1,11 +1,6 @@
 const neo4j = require('neo4j-driver');
+require('dotenv').config();
 
-// Váriaveis para autenticação com banco de dados
-const uri= "bolt://localhost:7687";
-const user =  "neo4j";
-const password = "lifepath";
-
-// Conexão com banco de dados
-const driver =  neo4j.driver(uri, neo4j.auth.basic(user, password));
+const driver =  neo4j.driver(process.env.APP_URI, neo4j.auth.basic(process.env.USER, process.env.PASSWORD));
 
 module.exports = driver;

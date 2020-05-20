@@ -98,6 +98,6 @@ aside a:hover{
     background: none;
     border: none;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }

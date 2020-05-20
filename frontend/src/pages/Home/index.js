@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './style.css'
 
@@ -145,7 +145,7 @@ export default function Routes(){
                     </div>
                     
 
-                    <Link  to="/query" className="moon">
+                    <Link  to={{pathname:"/query", match:{ params:{_previous_page: "/"}}}} className="moon">
                         <h2>make</h2>
                         <h2>your</h2>
                         <h2>QUERY</h2>
@@ -159,8 +159,8 @@ export default function Routes(){
                             <h1>Login</h1>
                             <input type="text" placeholder="User" onChange = { e => setUserLogin(e.target.value)}/>
                             <input type="password" placeholder="Password" onChange = { e => setPasswdLogin(e.target.value)}/>
-                            <a onClick = { e =>  openRegister(e)}>Doesn't have an account? Register</a>
-                            <a id="login_failed">Data does not match</a>
+                            <p className="p_style" onClick = { e =>  openRegister(e)}>Doesn't have an account? Register</p>
+                            <p className="p_style "id="login_failed">Data does not match</p>
                             <button onClick= { e => handleLogin(e)}>Log in</button>
                         </form>
                     </div>
@@ -176,9 +176,9 @@ export default function Routes(){
                             <input type="email" placeholder="Email" onChange = { e => setEmail(e.target.value)}/>
                             <input type="password" placeholder="Password" onChange = { e => setPassword(e.target.value)}/>
                             <input type="password" id="rpassword" placeholder="Retype password" onChange = { e => setRPassword(e.target.value)}/>
-                            <a href="" onClick = { e => openLogin(e)} >Already have an account?</a>
-                            <a id="user_failed">User Unavailable</a>
-                            <a id="passwd_failed">Retype your password again</a>
+                            <p className="p_style" onClick = { e => openLogin(e)} >Already have an account?</p>
+                            <p className="p_style" id="user_failed">User Unavailable</p>
+                            <p className="p_style" id="passwd_failed">Retype your password again</p>
                             <button onClick = {e => handleRegister(e)}>Send</button>
                         </form>
                     </div>

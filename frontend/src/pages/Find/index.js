@@ -77,7 +77,7 @@ export default function Find({titlePreview}){
         }        
     }, [parent]);
 
-    
+
     async function handleParent(e, parent){
         e.preventDefault()
         setParent(parent);

@@ -329,18 +329,7 @@
     transition: all 0.25s;
 }
 
-.login_form a{
-    margin-top: 5px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: right;
-    color: #0D8FB8;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
+
 
 .login_form button{
     outline: none;
@@ -368,4 +357,17 @@
     height: 200px;
     width: 100vw;
     background-color: white;
+}
+
+.p_style{
+    margin-top: 5px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: right;
+    color: #0D8FB8;
+    margin-bottom: 10px;
+    cursor: pointer;
 }

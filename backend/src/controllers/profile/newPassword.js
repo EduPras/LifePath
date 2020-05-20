@@ -24,7 +24,7 @@ module.exports = {
                     MATCH (u:user{user_login:"${user}"})
                     SET u.password = "${newHashedPassword}"
                     `
-                );
+                );  
                 return response.json("0");
 
             }else{

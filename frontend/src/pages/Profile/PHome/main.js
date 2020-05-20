@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { Link} from 'react-router-dom';
 
 export default function Main (){
     return(
@@ -10,7 +10,7 @@ export default function Main (){
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero enim aliquid quisquam voluptatum fugit, minima modi dicta recusandae, delectus aperiam eaque sit ducimus aut perspiciatis earum officia provident atque est?</p>
             </Link>
 
-            <Link className="card query_card"to="/query">
+            <Link className="card query_card"to={{pathname:"/query", match:{ params:{_previous_page: "/profile"}}}}>
                 <h2>Make your query</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero enim aliquid quisquam voluptatum fugit, minima modi dicta recusandae, delectus aperiam eaque sit ducimus aut perspiciatis earum officia provident atque est?</p>
             </Link>

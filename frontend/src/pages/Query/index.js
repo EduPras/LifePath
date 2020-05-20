@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 import api from '../../services/api';
@@ -11,7 +11,8 @@ import './style.css';
 
 
 
-export default function Query(){
+export default function Query({location}){
+    const previous = location.match;
 
     const [queries, setQueries] = useState([]);
 
@@ -35,7 +36,7 @@ export default function Query(){
 
     return(
         <section className="query">
-            <Link to="/">
+            <Link to={previous.params._previous_page}>
                 <div className="close_query">
                     <MdClose size="1.5rem" color="black" />
                 </div>
