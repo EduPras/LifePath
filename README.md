@@ -17,4 +17,4 @@ cd frontend
 npm install  
 npm start
 ```
-![Alt text](https://share.getcloudapp.com/6qu2Go7Y "Optional title")
+![Alt text](https://p56.f1.n0.cdn.getcloudapp.com/items/6qu2Go7Y/Screen%20Recording%202020-07-01%20at%2008.10.58.66%20PM.gif?v=6358cb01db31addfacd9fbe8ad7922eb "Optional title")
