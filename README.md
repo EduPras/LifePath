@@ -1,5 +1,7 @@
 # LifePath
 Aplicativo web para criação e armazenamento de chaves dicotômicas de insetos.
+Projeto disponível para visualização em: https://lifepath-frontend.herokuapp.com/
+(OBS: Detalhes finais ainda necessários, como adição de descrições, as quais estão com lorem ipsum)
 
 ## Executar aplicação
 ### Backend
@@ -9,7 +11,6 @@ cd backend
 npm install  
 npm start
 ```
-Utilize o insomnia ou um aplicativo semelhante para fazer as requests e criar nós, vale lembrar de possuir pelo menos um nó da chave no banco de dados.
 
 ### Frontend
 ```sh
