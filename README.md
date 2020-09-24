@@ -11,7 +11,7 @@ cd backend
 npm install  
 npm start
 ```
-
+Utilize um aplicativou de requisições para criar nós no grafo. Ex: Insomnia, Postman etc.
 ### Frontend
 ```sh
 cd frontend
